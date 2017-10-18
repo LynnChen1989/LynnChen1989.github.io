@@ -31,7 +31,7 @@ yum install perl perl-devel perl-Time-HiRes perl-DBI perl-DBD-MySQL perl-Digest-
 ### 查询db信息(pt-mysql-summary)
 
 ```
-pt-mysql-summary -- --user=root --password=p\!Opb5otdcbo5Pmybazk --host=172.31.6.45
+pt-mysql-summary -- --user=root --password=you_pass --host=172.31.6.45
 ```
 
 ### 数据一致性对比(pt-table-checksum)
@@ -57,13 +57,13 @@ P=3306         ：端口
 ##### 在MySQL A上执行
 
 ```
-pt-table-checksum  --nocheck-replication-filters --no-check-binlog-format  --databases=110005_doomsday_game h='172.31.13.9',u=root,P=3306,p=p\!Opb5otdcbo5Pmybazk
+pt-table-checksum  --nocheck-replication-filters --no-check-binlog-format  --databases=110005_doomsday_game h='172.31.13.9',u=root,P=3306,p=you_pass
 ```
 
 ##### 在MySQL B上执行
 
 ```
-pt-table-checksum  --nocheck-replication-filters --no-check-binlog-format --databases=110005_doomsday_game h='172.31.13.9',u=root,P=3306,p=p\!Opb5otdcbo5Pmybazk
+pt-table-checksum  --nocheck-replication-filters --no-check-binlog-format --databases=110005_doomsday_game h='172.31.13.9',u=root,P=3306,p=you_pass
 ```
 
 以上是一些常规场景的使用，得出结果后请人肉对比，对应主从场景，会直接得出比较结果，不需要人肉check。
@@ -73,7 +73,7 @@ pt-table-checksum  --nocheck-replication-filters --no-check-binlog-format --data
 如果是有主从关系，只需要在master执行即可。
 
 ```
-pt-table-checksum h=172.31.6.45,u=root,P=3306,p=p\!Opb5otdcbo5Pmybazk -d 110005_doomsday_game  --nocheck-replication-filters --nocheck-binlog-format --nocheck-plan --recursion-method=hosts
+pt-table-checksum h=172.31.6.45,u=root,P=3306,p=you_pass -d 110005_doomsday_game  --nocheck-replication-filters --nocheck-binlog-format --nocheck-plan --recursion-method=hosts
 ```
 
 **说明**
