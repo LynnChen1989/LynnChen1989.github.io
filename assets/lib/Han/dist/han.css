@@ -348,7 +348,7 @@ ruby.mps > rt:empty {
 .han-js-rendered del + del {
   margin-left: auto;
 }
-.textemphasis $han-text-emphasis-pf h-jinze,
+.textemphasis han-text-emphasis-pf h-jinze,
 .textemphasis em:lang(zh) h-jinze,
 .textemphasis em:lang(ja) h-jinze {
   display: inline;
@@ -392,7 +392,7 @@ ruby.mps > rt:empty {
   line-height: 1;
   text-align: center;
   text-indent: 0;
-  font-family: Georgia, "Times New Roman", Arial, !important;
+  font-family: Georgia, "Times New Roman", Arial, serif !important;
 }
 em:lang(zh) h-char.punct,
 em:lang(ja) h-char.punct,
