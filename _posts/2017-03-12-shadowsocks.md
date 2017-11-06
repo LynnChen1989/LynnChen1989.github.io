@@ -1,8 +1,9 @@
 ---
 layout: post
 title: shadowsocks
-tags: shadowsocks
+tags: 
     - shadowsocks
+    - VPN
 categories: 网络
 description:  shadowsocks 
 ---
