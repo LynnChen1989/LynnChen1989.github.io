@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d461e464-8762-446f-b005-3195563bb1ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/FUNDING.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/build-jekyll.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/defaults.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_data/translate_langs.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/custom-head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/click-to-top.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/code-highlight.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/comments/disqus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/comments/gitment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/comments/utterances.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/geopattern.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/google-analytics.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/google-translate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/hashlocate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/mathjax.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/theme-toggle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/extensions/trianglify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_article_excerpt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_article_words.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_banner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_categories.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_datetimes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_reading_time.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_tags.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/get_value.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/functions/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/sidebar/archive-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/sidebar/article-menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/sidebar/category-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/sidebar/common-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/sidebar/google-translate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/sidebar/tag-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/article.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/banner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/paginator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/post-header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/post-item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/segments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/views/site-brand.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/archives.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/articles.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/categories.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/framework.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/tags.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2015-02-28-test-markdown.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2016-01-01-another-test-markdown.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2016-05-19-super-short-article.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2016-05-20-super-long-article.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2016-08-12-my-example-post.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-05-20-this-post-demonstrates-post-content-styles.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-06-10-quick-mardown-example.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-12-04-plantuml-example.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-12-08-mermaid-example.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-12-15-table-example.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2017-12-18-video-example.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-05-26-mathjax-test.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-12-05-an-exhibit-of-markdown.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2018-12-07-welcome-to-jekyll.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/misc/article-menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/misc/click-to-top.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/misc/common-list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/misc/gitment.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/misc/google-translate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/misc/theme-toggle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/yat.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/yat/_base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/yat/_dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/yat/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archives.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/banners/home.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/categories.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jekyll-theme-yat.gemspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tags.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EYxcIjKAXb78jdUJfv9JemLkie" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_includes" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_includes" />
+      <recent name="$PROJECT_DIR$/_docs/generic" />
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/_docs/images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_tags" />
+      <recent name="$PROJECT_DIR$/assets/images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d461e464-8762-446f-b005-3195563bb1ed" name="Changes" comment="" />
+      <created>1662786397213</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662786397213</updated>
+      <workItem from="1662786398671" duration="2382000" />
+      <workItem from="1662788934527" duration="6875000" />
+      <workItem from="1663314543467" duration="188000" />
+      <workItem from="1663314790171" duration="16689000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
