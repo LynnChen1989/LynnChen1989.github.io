@@ -7,9 +7,9 @@ tags: [Kubernetes]
 ---
 
 
-# VXLAN介绍
+## VXLAN介绍
 
-### 简介
+## 简介
 VLAN作为传统的网络隔离技术，在标准定义中VLAN的数量只有4000个左右，无法满足大型数据中心的租户间隔离需求。另外，VLAN的二层范围一般较小且固定，无法支持虚拟机大范围的动态迁移。
 
 VXLAN完美地弥补了VLAN的上述不足，一方面通过VXLAN中的24比特VNI字段，提供多达16M租户的标识能力，远大于VLAN的4000；另一方面，VXLAN本质上在两台交换机之间构建了一条穿越数据中心基础IP网络的虚拟隧道，将数据中心网络虚拟成一个巨型“二层交换机”，满足虚拟机大范围动态迁移的需求。 
@@ -145,7 +145,7 @@ PING 172.16.200.2 (172.16.200.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.471/0.599/0.727/0.128 ms
 ```
 
-# 二、多播模式VXLAN
+## 二、多播模式VXLAN
 
 <img src="/assets/images/vxlan-mutil.png" width="100%" height="100%" alt="" />
 
@@ -255,7 +255,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 
 ```
 
-# 三、多播+Bridge模式VXLAN
+## 三、多播+Bridge模式VXLAN
 
 <img src="/assets/images/vxlan-bridge.png" width="100%" height="100%" alt="" />
 
@@ -271,14 +271,14 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 | 容器IP  | container_43_001[172.200.1.2]<br/>container_43_002[172.200.1.3] | container_53_001[172.200.1.99] | 
 
 
-## 节点1（10.168.0.43）配置
+### 节点1（10.168.0.43）配置
 
-### 首先创建VXLAN，使用多播模式
+#### 首先创建VXLAN，使用多播模式
 
 ```shell
 # ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens160 group 233.1.1.1
 ```
-### 创建网桥 bridge2022 ，把vxlan0绑定到上面，并启用它们
+#### 创建网桥 bridge2022 ，把vxlan0绑定到上面，并启用它们
 
 ```shell
 # ip link add bridge2022 type bridge
@@ -287,9 +287,9 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 # ip link set bridge2022 up
 ```
 
-### 容器模拟配置（container_43_001、container_43_002）
+#### 容器模拟配置（container_43_001、container_43_002）
 
-#### 模拟容器container_43_001（172.200.1.2/24）
+##### 模拟容器container_43_001（172.200.1.2/24）
 
 ```shell
 
@@ -330,7 +330,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 ```        
  	   
 
-#### 模拟容器container_43_002（172.200.1.3/24）
+##### 模拟容器container_43_002（172.200.1.3/24）
 ```shell
 # ip netns add container_43_002
 # ip link add veth2 type veth peer name veth3
@@ -344,14 +344,14 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 # ip netns exec container_43_002 ip add    
 ```
 
-## 节点1（10.168.0.53）配置
+### 节点1（10.168.0.53）配置
 
-### 首先创建VXLAN，使用多播模式
+#### 首先创建VXLAN，使用多播模式
 
 ```shell
 # ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens192 group 233.1.1.1
 ```
-### 创建网桥 bridge2022 ，把vxlan0绑定到上面，并启用它们
+#### 创建网桥 bridge2022 ，把vxlan0绑定到上面，并启用它们
 
 ```shell
 # ip link add bridge2022 type bridge
@@ -360,9 +360,9 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 # ip link set bridge2022 up
 ```
 
-### 容器模拟配置（container_43_001、container_43_002）
+#### 容器模拟配置（container_43_001、container_43_002）
 
-####  模拟容器container_53_001（172.200.1.99/24）
+#####  模拟容器container_53_001（172.200.1.99/24）
 ```shell
 # ip netns add container_53_001
 # ip link add veth0 type veth peer name veth1
@@ -377,7 +377,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 
 ```
 
-## 测试
+### 测试
 
 在模拟容器container_53_001中执行`ping 172.200.1.2/3`操作
 
