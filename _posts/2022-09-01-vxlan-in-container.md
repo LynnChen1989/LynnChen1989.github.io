@@ -58,7 +58,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 
 <img src="/assets/images/vxlan-basic.jpg" width="100%" height="100%" alt="" />
 
-# 一、点对点VXLAN
+## 一、点对点VXLAN
 
 <img src="/assets/images/vxlan-p2p.png" width="100%" height="100%" alt="" />
 
