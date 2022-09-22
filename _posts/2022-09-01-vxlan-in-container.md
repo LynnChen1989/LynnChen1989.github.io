@@ -56,7 +56,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 
 <img src="/assets/images/vxlan-basic.jpg" width="100%" height="100%" alt="" />
 
-## 点对点VXLAN
+# 一、点对点VXLAN
 
 <img src="/assets/images/vxlan-p2p.png" width="100%" height="100%" alt="" />
 
@@ -69,7 +69,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 ### 10.168.0.43配置
 
 #### 创建一个名为 vxlan0 ，类型为vxlan的网络接口
-```
+```shell
 # ip link add vxlan0 type vxlan id 100 dstport 4789 remote 10.168.0.53 local 10.168.0.43 dev ens160
 ```
 ，一些重要参数说明： 
@@ -80,7 +80,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 + dev ens160：当前节点用于VTEP要使用的IP地址，用来获取VTEP IP地址。
 
 #### 为VXLAN网卡配置IP地址并启用
-```
+```shell
 # ip addr add 172.16.200.2/24 dev vxlan0
 # ip link set vxlan0 up
 ```
@@ -97,7 +97,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 ```
 
 (2)执行`ip route`输出
-```
+```shell
 172.16.200.0/24 dev vxlan0 proto kernel scope link src 172.16.200.2
 ```
 
@@ -110,7 +110,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 
 ### 10.168.0.53配置
 
-```
+```shell
 # ip link add vxlan0 type vxlan id 100 dstport 4789 remote 10.168.0.43 local 10.168.0.53 dev ens192 
 # ip addr add 172.16.200.3/24 dev vxlan0 
 # ip link set vxlan0 up
@@ -143,7 +143,7 @@ PING 172.16.200.2 (172.16.200.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.471/0.599/0.727/0.128 ms
 ```
 
-## 多播模式VXLAN
+# 二、多播模式VXLAN
 
 <img src="/assets/images/vxlan-mutil.png" width="100%" height="100%" alt="" />
 
@@ -159,7 +159,7 @@ rtt min/avg/max/mdev = 0.471/0.599/0.727/0.128 ms
 ### 10.168.0.43配置
 
 #### 创建一个名为 vxlan0 ，类型为vxlan的网络接口
-```
+```shell
 # ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens160 group 239.1.1.1 
 ```
 
@@ -167,7 +167,7 @@ rtt min/avg/max/mdev = 0.471/0.599/0.727/0.128 ms
 
 #### VXLAN接口配置地址并启用
 
-```
+```shell
 # ip addr add 172.200.1.2/24 dev vxlan0
 # ip link set dev vxlan0 up
 ```
@@ -198,7 +198,7 @@ rtt min/avg/max/mdev = 0.471/0.599/0.727/0.128 ms
 同理，需要为通信的节点进行上诉配置，验证它们是否通过172.200.1.0/24网络互相通信。
 
 ### 10.168.0.53配置
-```
+```shell
 ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens192 group 239.1.1.1 
 ip addr add 172.200.1.3/24 dev vxlan0
 ip link set dev vxlan0 up
@@ -208,7 +208,7 @@ bridge fdb show dev vxlan0
 ```
 
 ### 10.168.0.30配置
-```
+```shell
 ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens192 group 239.1.1.1 
 ip addr add 172.200.1.4/24 dev vxlan0
 ip link set dev vxlan0 up
@@ -253,7 +253,8 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 
 ```
 
-# 多播+Bridge模式VXLAN
+# 三、多播+Bridge模式VXLAN
+
 <img src="/assets/images/vxlan-bridge.png" width="100%" height="100%" alt="" />
 
 前面的方法能够通过多播实现自动话的overlay网络构建，但是通信双方只有一个VTEP，但是在容器应用的领域，每一台宿主机安装好了docker后，会创建一个虚拟网桥，用于容器内部网络的对外通信接口，那么在我们跨主机的容器组网时可以使用网桥将多个虚拟机或容器放到同一个VXLAN网络中，和前面的多播相比，只是多了一块网桥，连接同一个主机上不同容器的 veth pair，这里先用 network namespace 代替容器，其实原理是一样的。创建一个network namespace ，并通过 veth pair将namespace 中的eth0 网卡连接到网桥，同时VXLAN也连接到网桥。
@@ -271,12 +272,13 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 ## 节点1（10.168.0.43）配置
 
 ### 首先创建VXLAN，使用多播模式
-```
+
+```shell
 # ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens160 group 233.1.1.1
 ```
 ### 创建网桥 bridge2022 ，把vxlan0绑定到上面，并启用它们
 
-```
+```shell
 # ip link add bridge2022 type bridge
 # ip link set vxlan0 master bridge2022
 # ip link set vxlan0 up
@@ -287,7 +289,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 
 #### 模拟容器container_43_001（172.200.1.2/24）
 
-```
+```shell
 
 (1)创建NS
 # ip netns add container_43_001
@@ -311,6 +313,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 (6)查看container_43_001网络配置
 # ip netns exec container_43_001 ip add                              
 ```
+
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -326,7 +329,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
  	   
 
 #### 模拟容器container_43_002（172.200.1.3/24）
-```
+```shell
 # ip netns add container_43_002
 # ip link add veth2 type veth peer name veth3
 # ip link set dev veth2 master bridge2022
@@ -343,12 +346,12 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 
 ### 首先创建VXLAN，使用多播模式
 
-```
+```shell
 # ip link add vxlan0 type vxlan id 2022 dstport 4789 dev ens192 group 233.1.1.1
 ```
 ### 创建网桥 bridge2022 ，把vxlan0绑定到上面，并启用它们
 
-```
+```shell
 # ip link add bridge2022 type bridge
 # ip link set vxlan0 master bridge2022
 # ip link set vxlan0 up
@@ -358,7 +361,7 @@ rtt min/avg/max/mdev = 0.393/0.846/1.299/0.453 ms
 ### 容器模拟配置（container_43_001、container_43_002）
 
 ####  模拟容器container_53_001（172.200.1.99/24）
-```
+```shell
 # ip netns add container_53_001
 # ip link add veth0 type veth peer name veth1
 # ip link set dev veth0 master bridge2022
