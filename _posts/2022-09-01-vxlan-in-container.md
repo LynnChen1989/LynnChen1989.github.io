@@ -112,7 +112,7 @@ VXLAN的报文传输必须要知道以下三个信息：
 
 ### 10.168.0.53配置
 
-```shell
+```bash
 # ip link add vxlan0 type vxlan id 100 dstport 4789 remote 10.168.0.43 local 10.168.0.53 dev ens192 
 # ip addr add 172.16.200.3/24 dev vxlan0 
 # ip link set vxlan0 up
